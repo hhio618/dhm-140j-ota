@@ -1,2 +1,2 @@
 #!/bin/bash
-efdddbd
+echo "ota update checked!"
