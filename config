@@ -25,7 +25,11 @@ font pango:monospace 8
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# Start udisks2 service
+exec --no-startup-id sudo systemctl start udisks2
 
+# Start gvfs-daemon
+exec --no-startup-id sudo systemctl start gvfs-daemon
 exec_always bash -c "sudo killall dhm-140j; sudo -H LOG_LEVEL=debug dhm-140j 2>&1 | tee -a /var/lib/dhm-140-j.log"
 exec --no-startup-id feh --background-color #191836
 for_window [class="^Pcmanfm$"] fullscreen enable, floating enable, resize set 860 600, move position 0 0
