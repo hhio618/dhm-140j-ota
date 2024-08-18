@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "ota update checked!"
+echo "Some strange error happened!" >&2
